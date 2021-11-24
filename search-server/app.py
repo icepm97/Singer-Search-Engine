@@ -20,7 +20,32 @@ def about(term: str):
             "query": {
                 "multi_match" : {
                     "query": term,
-                    "fields": ["name", "info", "from", "gender", "intro", "description", "type", "birth", "is", "age", "death", "was", "star sign", "instruments:", "profiles", "family", "a.k.a.", "education", "known for", "residence", "genre:", "politics", "stats", "notable works"]
+                    "fields": [
+                        "name^2", 
+                        "info", 
+                        "from", 
+                        "gender", 
+                        "intro", 
+                        "description^0.5", 
+                        "type", 
+                        "birth", 
+                        "is", 
+                        "age", 
+                        "death", 
+                        "was", 
+                        "star sign", 
+                        "instruments:", 
+                        "profiles", 
+                        "family", 
+                        "a.k.a.^2", 
+                        "education", 
+                        "known for", 
+                        "residence", 
+                        "genre:", 
+                        "politics", 
+                        "stats", 
+                        "notable works"
+                    ]
                 }
             }
         }
